@@ -4,3 +4,4 @@
 /apps/*/*
 !/apps/loopar
 /.idea/
+/loopar-env/

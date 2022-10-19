@@ -52,7 +52,7 @@ export default class ModuleView extends ViewContext {
                     <div class="card-body text-center">
                       <a href="/${row.module}/${row.name}/${action}" element="element-${action}" class="tile tile-lg bg-${color} mb-2">${avatar(row.name)}</a>
                       <h5 class="card-title">
-                        <a href="page-project.html">${row.name}</a>
+                        <a href="#">${row.name}</a>
                       </h5>
                       
                       <div class="my-3">
