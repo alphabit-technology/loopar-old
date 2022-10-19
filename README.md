@@ -1,5 +1,5 @@
 <div align = "center">
-    <img src = "https://user-images.githubusercontent.com/87505840/196587579-abe870c0-1491-4aa5-9e2f-e2c340b9c444.svg" height = "128">
+    <img src = "https://user-images.githubusercontent.com/87505840/196587579-abe870c0-1491-4aa5-9e2f-e2c340b9c444.svg" height = "">
     <h2>JavaScript Drag and Drop Framework (MySql, Node Js)</h2>
 </div>
 
