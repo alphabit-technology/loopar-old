@@ -8,7 +8,7 @@ ___
 > ### Loopar Funtionalities:
 
 1. Drad and Drop documents.
-2. Pure JavasCritp (in server Node Js).
+2. Pure JavaScript (in server Node Js).
 3. ...
 ___
 ### Loopar requires
