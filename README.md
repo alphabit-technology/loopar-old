@@ -18,10 +18,9 @@ ___
 ### How to Install
 
 1. `git clone https://github.com/quantumbitcore/loopar.git`
-2. `execute npm install`
-3. `execute npm run dev`
-4. `Continue in Your Browser`
-)
+2. execute `npm install`
+3. execute `npm run dev`
+4. Continue in Your Browser
 
 ___
 ### How to Use
