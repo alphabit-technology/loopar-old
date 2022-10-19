@@ -3,7 +3,7 @@
     <h2>JavaScript Drag and Drop Framework (MySql, Node Js)</h2>
 </div>
 
-> ### Looper is a test project for now only development character
+> ### Loopar is a test project for now only development character
 ___
 > ### Loopar Funtionalities:
 
