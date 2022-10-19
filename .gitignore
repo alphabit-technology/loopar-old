@@ -1,7 +1,7 @@
-/node_modules/
-/config/
-/apps/*
-/apps/*/*
-!/apps/loopar
-/.idea/
-/loopar-env/
+node_modules
+config
+loopar-env
+apps
+!apps/loopar
+.idea
+
