@@ -89,7 +89,7 @@ export default class CoreController extends AuthController {
          url: this.url,
          client_importer: await this.client_importer(),
          context: this.context,
-         user: loopar.current_user
+         user: loopar.current_user || {},
       });
 
       this.method === AJAX ? this.res.send(content) : await this.main(content, template);

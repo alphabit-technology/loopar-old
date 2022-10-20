@@ -31,7 +31,7 @@
     "serialize-javascript": "^6.0.0",
     "sha1": "^1.1.1",
     "validator": "^13.7.0",
-    "loopar-env": "^1.0.4"
+    "loopar-env": "^1.0.5"
   },
   "devDependencies": {
     "mysql": "^2.18.1"

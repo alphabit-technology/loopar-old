@@ -110,10 +110,10 @@ export default class Document extends BaseDocument {
       this.doc_structure = fix_fields(this.doc_structure, name_structure);
 
       if (!exist_column && this.type === 'Document') {
-         exist_column = false;
          name_structure.data.hidden = 1;
          this.doc_structure = [name_structure, ...this.doc_structure];
       }
+      exist_column = false;
 
       /*this.doc_structure = fix_fields(this.doc_structure, is_deleted);
 
@@ -125,9 +125,9 @@ export default class Document extends BaseDocument {
       this.doc_structure = fix_fields(this.doc_structure, id_structure);
 
       if (!exist_column) {
-         exist_column = false;
          this.doc_structure = [id_structure, ...this.doc_structure];
       }
+      exist_column = false;
    }
 
    validate_type() {
