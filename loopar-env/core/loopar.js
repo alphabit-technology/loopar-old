@@ -308,8 +308,12 @@ export class Loopar {
       return user.length > 0 ? user[0] : null;
    }
 
+   get session() {
+      return this.server && this.server.request && this.server.request.session ? this.server.request.session : {};
+   }
+
    get current_user() {
-      return this.server.request.session.user ;
+      return this.session.user || null;
    }
 
    async update_installer(_path, document, name, record, delete_record = false) {

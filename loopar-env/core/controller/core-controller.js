@@ -51,21 +51,24 @@ export default class CoreController extends AuthController {
          message: error.message || error,
       }
 
-      if (this.method === AJAX) {
-
-         try {
+      try {
+         if (this.method === AJAX) {
             return this.res
                .status(error.error)
                .json({error: 'Error ' + error.error, message: error.message}).send();
-         }catch (e) {
-           console.log(['errr send err', e]);
+
+         } else {
+            return await this.render({
+               title: 'Error ' + error.error,
+               message: error.message
+            }, this.template_error(error.error));
          }
-      } else {
-         return await this.render({title: 'Error ' + error.error, message: error.message}, this.template_error(error.error));
+      } catch (e) {
+         console.log(['Err on to try send error', e]);
       }
    }
 
-   redirect(url=null) {
+   redirect(url = null) {
       this.res.redirect(url || this.req.originalUrl);
    }
 

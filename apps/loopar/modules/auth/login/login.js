@@ -28,6 +28,7 @@ export default class Login extends BaseDocument {
             });
          } else {
             //loopar.logged_user = null;
+            loopar.server.request.session.user = null;
             loopar.throw({
                trow: 'Login Error',
                message: 'Invalid user or password'
