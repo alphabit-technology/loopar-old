@@ -29,7 +29,7 @@ export default class AppManagerView extends ViewContext {
         this.apps.forEach(app => {
             const action = app.is_single ? (app.type === 'Page' ? 'view' : 'update') : 'index';
             const installed_message = app.installed ? "Installed" : "Uninstalled";
-            const icon_installed = app.installed ? "fa fa-check-circle text-teal" : "oi oi-fork text-danger";
+            //const icon_installed = app.installed ? "fa fa-check-circle text-teal" : "oi oi-fork text-danger";
 
             const app_name = elements({
                 wrapper: this.wrapper_container,
@@ -54,39 +54,47 @@ export default class AppManagerView extends ViewContext {
                     </div>
                     <div class="card-footer">
                         <div class="card-footer-item">
-                          <button type="button" element="install" class="btn btn-reset text-nowrap text-muted"><i element="install-icon"></i> <label element="install-label">${app.installed ? 'Installed' : 'Install'}</label></button>
+                          <button type="button" element="install" class="btn btn-reset text-nowrap text-muted">
+                            <i element="install-icon"></i>
+                            <label element="install-label">${app.installed ? 'Installed' : 'Install'}</label>
+                          </button>
                         </div>
                         <div class="card-footer-item">
-                          <button type="button" element="update" class="btn btn-reset text-nowrap text-muted"><i class="oi oi-loop-circular text-warning"></i> Update ${app.installed && app.installed_version !== app.version ? app.version : ""}</button>
+                          <button type="button" element="update" class="btn btn-reset text-nowrap text-muted">
+                            <i class="oi oi-loop-circular text-warning"></i>
+                            <label>Update ${app.installed && app.installed_version !== app.version ? app.version : ""}</label>
+                          </button>
                         </div>
                       </div>
                   </div>
                 `
             }).tag('div');
 
-            console.log(app_name);
+            const [install, update, install_icon, install_label] = [app_name.install, app_name.update, app_name.install_icon, app_name.install_label];
 
-            app_name.install.on('click', (obj, event) => {
+            install.on('click', (obj, event) => {
                 event.preventDefault();
                 this.send_app_action(app.name, app.installed ? 'uninstall' : 'install');
             });
 
-            app_name.update.on('click', (obj, event) => {
+            update.on('click', (obj, event) => {
                 event.preventDefault();
+
                 this.send_app_action(app.name, 'update');
             });
 
             if(app.installed) {
-                app.version !== app.installed_version ? app_name.update.enable() : app_name.update.disable();
-                app_name.install_icon.remove_class('oi oi-fork text-warning', true).add_class('fa fa-trash text-danger');
-                app_name.install_label.val('Uninstall');
+                console.log([app.version === app.installed_version])
+                app.version === app.installed_version ? update.disable() : update.enable();
+                install_icon.remove_class('oi oi-fork text-warning', true).add_class('fa fa-trash text-danger');
+                install_label.val('Uninstall');
 
                 if(app.name === "loopar") {
                     app_name.install.disable();
                 }
             }else{
-                app_name.install_icon.remove_class('fa fa-trash text-danger', true).add_class('oi oi-fork text-warning');
-                app_name.install_label.val('Install');
+                install_icon.remove_class('fa fa-trash text-danger', true).add_class('oi oi-fork text-warning');
+                install_label.val('Install');
                 app_name.update.disable();
             }
         });

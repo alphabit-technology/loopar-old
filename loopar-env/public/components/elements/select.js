@@ -321,8 +321,6 @@ export class Select extends BaseInput {
       const position = getPosition(this.obj);
       const windowHalf = window.innerHeight / 2;
 
-      console.log(selector)
-
       if (position > windowHalf) {
          this.result_area.remove_class('select2-container--below', true).add_class('select2-container--above');
          selector.remove_class('select2-dropdown--below', true).add_class('select2-dropdown--above');
@@ -354,6 +352,14 @@ export class Select extends BaseInput {
       this.data.size = size;
 
       return this;
+   }
+
+   invalid_status() {
+      this.result_area.selection.content.add_class('is-invalid');
+   }
+
+   valid_status() {
+      this.result_area.selection.content.remove_class('is-invalid');
    }
 }
 

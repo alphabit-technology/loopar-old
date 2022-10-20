@@ -737,7 +737,7 @@ export class BaseHtml {
    enable(on_enable = true) {
       this.#disabled = false;
       if (on_enable) {
-         this.prop("disabled", false);
+         this.remove_attr("disabled");
       }
       this.remove_class(this.jshtml_identifier);
 

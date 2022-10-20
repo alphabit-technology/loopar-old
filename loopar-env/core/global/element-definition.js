@@ -232,7 +232,7 @@ class DataInterface {
       const required = [true, 'true', 1, '1'].includes(this.data.required);
 
       return {
-         valid: !required || (typeof this.value != "undefined" || (!["null", "undefined"].includes(this.value) && (this.value || "").toString().length > 0)),
+         valid: !required || !(typeof this.value == "undefined" || (["null", "undefined"].includes(this.value) || (this.value || "").toString().length === 0)),
          message: `${this.__label()} is required`
       }
    }
