@@ -22,6 +22,7 @@ ___
 5. Install Mysql Server in local or use remote server.
 6. continue in your browser
 
+
 ___
 ### How to Use
 > See the documentation [here](https://github.com/quantumbitcore/loopar/wiki)
