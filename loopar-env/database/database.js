@@ -394,9 +394,6 @@ export default class DataBase extends ObjectManage {
 
    async make_table(name, fields) {
       const tableQuery = await this.alter_table_query_build(name, fields, !loopar.installing);
-
-      console.log(tableQuery);
-
       await this.execute(tableQuery, false);
    }
 
