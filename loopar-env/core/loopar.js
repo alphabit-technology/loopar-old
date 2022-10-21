@@ -323,10 +323,7 @@ export class Loopar {
 
       if (installer_data) {
          if (delete_record) {
-            console.log(['delete installer', installer_data, document, name]);
-            delete installer_data[document][name];
-
-
+             delete installer_data[document][name];
          }else {
             installer_data[document] = installer_data[document] || {};
 
