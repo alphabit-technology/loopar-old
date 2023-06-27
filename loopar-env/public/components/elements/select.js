@@ -227,9 +227,13 @@ export class Select extends BaseInput {
             },
             content: `
                 <div class="media">
-                    <div class="media-body"><h6 class="my-0">${this.option_value(row).value}</h6>
+                    <div class="media-body">
+                        <h6 class="my-0">${this.option_value(row).value}</h6>
                         <ul class="list-inline small text-muted">
-                            <li class="list-inline-item"><i class="fa fa-flash"></i> ${this.option_value(row).option}</li>
+                            <li class="list-inline-item">
+                                <i class="fa fa-flash"></i>
+                                ${this.option_value(row).option}
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -1,4 +1,9 @@
 node_modules
-config
 loopar-env
+config
 .idea
+.env.dist
+apps/*
+!apps/loopar
+!apps/library
+public/uploads
